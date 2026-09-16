@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'PP Frama Black Italic';
+  src: url('/fonts/PPFrama-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Frama Extrabold Italic';
+  src: url('/fonts/PPFrama-ExtraboldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Frama Bold';
+  src: url('/fonts/PPFrama-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Frama Regular';
+  src: url('/fonts/PPFrama-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-canvas: #111113;
+  --bg-surface: #18181b;
+  --bg-surface-elevated: #222227;
+  --text-ink: #f4f3ee;
+  --text-muted: #8e8e93;
+  --text-dim: #5c5c62;
+  --accent-lime: #ceff00;
+  --accent-pink: #ff3eba;
+  --border-subtle: rgba(244, 243, 238, 0.08);
+  --border-medium: rgba(244, 243, 238, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-canvas);
+  color: var(--text-ink);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+}
+
+/* Primary Display - Monumental, Aggressive, Italic */
+.font-frama-black-italic {
+  font-family: 'PP Frama Black Italic', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.04em;
+}
+
+.font-frama-extrabold-italic {
+  font-family: 'PP Frama Extrabold Italic', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.font-frama-bold {
+  font-family: 'PP Frama Bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-frama-regular {
+  font-family: 'PP Frama Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Metadata Display (Heavy Italic Grotesque) */
+.font-frama-meta {
+  font-family: 'PP Frama Black Italic', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Supporting Typography Hierarchy - Bold, Premium, Geometric */
+.font-label-bold {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.font-index-bold {
+  font-family: 'PP Frama Black Italic', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.font-sans-body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-style: normal;
+  letter-spacing: -0.01em;
+}
+
+/* Character interactive elements */
+.interactive-char {
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 0.12s ease-out;
+}
+
+/* Subtle scroll-driven reveals */
+@keyframes revealSlow {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-init {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lenis smooth scrolling setup */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Section scroll alignment with fixed header clearance */
+#work, #about, #craft, #contact {
+  scroll-margin-top: 80px;
+}
+
+@media (min-width: 768px) {
+  #work, #about, #craft, #contact {
+    scroll-margin-top: 90px;
+  }
+}
+
+/* Fallback smooth scroll when Lenis is not active */
+html:not(.lenis) {
+  scroll-behavior: smooth;
+}
