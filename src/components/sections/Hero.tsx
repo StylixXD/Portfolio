@@ -39,12 +39,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hidden sm:flex flex-col items-end">
-          <div className="inline-flex items-center space-x-2 px-2.5 py-1 rounded-full bg-[#18181C] border border-[rgba(244,243,238,0.08)] mb-1 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#CEFF00] animate-pulse" />
-            <span className="font-mono text-[10px] tracking-wider text-[#CEFF00] uppercase font-bold">SYSTEMS ACTIVE</span>
-          </div>
-          <p className="font-sans-body text-xs md:text-sm text-[#F4F3EE] font-medium">
+        <div className="hidden sm:block text-right">
+          <p className="font-frama-meta text-xs text-[#8E8E93] tracking-wider">
+            Selected Works
+          </p>
+          <p className="font-sans-body text-xs md:text-sm text-[#F4F3EE] font-medium mt-1">
             2026 — Present
           </p>
         </div>

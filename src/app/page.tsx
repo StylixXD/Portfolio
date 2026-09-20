@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-[#111113] text-[#F4F3EE] selection:bg-[#CEFF00] selection:text-[#111113]">
+    <main className="relative min-h-screen bg-[#0C0C0C] text-[#F4F3EE] selection:bg-[#CEFF00] selection:text-[#0C0C0C]">
       <EditorialHeader />
       <Hero />
       <WorkExhibition />

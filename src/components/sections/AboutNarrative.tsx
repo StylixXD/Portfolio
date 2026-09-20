@@ -23,17 +23,19 @@ function HighlightWord({
 
 export default function AboutNarrative() {
   return (
-    <section id="about" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
+    <section id="about" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(215,226,234,0.12)]">
       <div data-scroll-reveal className="mb-16">
         <TextScramble
           text="[02] // THE STORY"
           className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]"
         />
-        <AliveSectionHeading
-          text="Behind the Screen"
-          variant="stagger-chars"
-          className="text-4xl sm:text-6xl text-[#F4F3EE] mt-2"
-        />
+        <div className="hero-heading">
+          <AliveSectionHeading
+            text="Behind the Screen"
+            variant="stagger-chars"
+            className="text-4xl sm:text-6xl mt-2"
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
