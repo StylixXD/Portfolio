@@ -42,22 +42,20 @@ const CRAFT_DOMAINS = [
 
 export default function CraftToolbox() {
   return (
-    <section id="craft" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(215,226,234,0.12)]">
+    <section id="craft" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
       <div data-scroll-reveal className="flex flex-col md:flex-row md:items-baseline justify-between mb-16">
         <div>
           <TextScramble
             text="[03] // WHAT I BUILD WITH"
             className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]"
           />
-          <div className="hero-heading">
-            <AliveSectionHeading
-              text="Craft & Toolbox"
-              variant="tracking-expand"
-              className="text-4xl sm:text-6xl mt-2"
-            />
-          </div>
+          <AliveSectionHeading
+            text="Craft & Toolbox"
+            variant="tracking-expand"
+            className="text-4xl sm:text-6xl text-[#F4F3EE] mt-2"
+          />
         </div>
-        <p className="font-sans-body text-sm text-[#D7E2EA]/75 max-w-xs mt-4 md:mt-0">
+        <p className="font-sans-body text-sm text-[#8E8E93] max-w-xs mt-4 md:mt-0">
           The tools I actually use to turn ideas into working software.
         </p>
       </div>
@@ -69,7 +67,7 @@ export default function CraftToolbox() {
             key={domain.num}
             spotlightColor="rgba(206, 255, 0, 0.08)"
             borderColor="rgba(206, 255, 0, 0.35)"
-            className={`p-8 md:p-10 rounded-2xl bg-[#121215] border border-[#D7E2EA]/12 ${domain.initialRotate} hover:rotate-0 hover:scale-[1.015] hover:-translate-y-2.5 hover:border-[rgba(206,255,0,0.35)] hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between space-y-6 shadow-xl will-change-transform cursor-default`}
+            className={`p-8 md:p-10 rounded-2xl bg-[#141417] border border-[rgba(244,243,238,0.08)] ${domain.initialRotate} hover:rotate-0 hover:scale-[1.015] hover:-translate-y-2.5 hover:border-[rgba(244,243,238,0.25)] hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between space-y-6 shadow-lg will-change-transform cursor-default`}
           >
             <div>
               <span className="font-frama-meta text-sm text-[#CEFF00]">

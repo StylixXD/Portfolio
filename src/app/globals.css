@@ -34,17 +34,16 @@
 }
 
 :root {
-  --bg-canvas: #0C0C0C;
-  --bg-surface: #121215;
-  --bg-surface-elevated: #1a1a1f;
+  --bg-canvas: #111113;
+  --bg-surface: #18181b;
+  --bg-surface-elevated: #222227;
   --text-ink: #f4f3ee;
   --text-muted: #8e8e93;
   --text-dim: #5c5c62;
-  --text-silver: #d7e2ea;
   --accent-lime: #ceff00;
   --accent-pink: #ff3eba;
-  --border-subtle: rgba(215, 226, 234, 0.08);
-  --border-medium: rgba(215, 226, 234, 0.16);
+  --border-subtle: rgba(244, 243, 238, 0.08);
+  --border-medium: rgba(244, 243, 238, 0.16);
 }
 
 * {
@@ -194,13 +193,6 @@ html.lenis, html.lenis body {
 /* Fallback smooth scroll when Lenis is not active */
 html:not(.lenis) {
   scroll-behavior: smooth;
-}
-
-/* Metallic / Titanium Gradient Text from reference */
-.hero-heading {
-  background: linear-gradient(180deg, #FFFFFF 0%, #D7E2EA 55%, #646973 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 @keyframes float-idle {

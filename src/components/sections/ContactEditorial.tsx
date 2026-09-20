@@ -20,7 +20,7 @@ export default function ContactEditorial() {
   ];
 
   return (
-    <section id="contact" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(215,226,234,0.12)]">
+    <section id="contact" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
       <div data-scroll-reveal className="mb-12">
         <TextScramble
           text="[04] // GET IN TOUCH"
@@ -33,7 +33,7 @@ export default function ContactEditorial() {
         <div data-scroll-reveal className="lg:col-span-8">
           <InteractiveContactHeading lines={contactLines} />
 
-          <p className="font-sans-body text-base sm:text-lg text-[#D7E2EA]/75 max-w-xl mt-8 leading-relaxed">
+          <p className="font-sans-body text-base sm:text-lg text-[#8E8E93] max-w-xl mt-8 leading-relaxed">
             Whether you need high-concurrency bot infrastructure, low-level process tooling,
             or custom automation pipelines built from scratch, reach out directly.
           </p>
@@ -46,7 +46,7 @@ export default function ContactEditorial() {
             href="https://t.me/stylixXD"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#121215] border border-[#D7E2EA]/12 hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
@@ -64,7 +64,7 @@ export default function ContactEditorial() {
           {/* Discord */}
           <div
             onClick={() => copyToClipboard('Itzboyashu', 'Discord')}
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#121215] border border-[#D7E2EA]/12 hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
@@ -82,7 +82,7 @@ export default function ContactEditorial() {
           {/* Email */}
           <a
             href="mailto:stylixXD@gmail.com"
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#121215] border border-[#D7E2EA]/12 hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
@@ -102,7 +102,7 @@ export default function ContactEditorial() {
             href="https://github.com/stylixXD"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#121215] border border-[#D7E2EA]/12 hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
