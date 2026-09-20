@@ -2,6 +2,8 @@
 
 import React from 'react';
 import AliveSectionHeading from '@/components/ui/AliveSectionHeading';
+import SpotlightCard from '@/components/ui/SpotlightCard';
+import TextScramble from '@/components/ui/TextScramble';
 
 const CRAFT_DOMAINS = [
   {
@@ -43,9 +45,10 @@ export default function CraftToolbox() {
     <section id="craft" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
       <div data-scroll-reveal className="flex flex-col md:flex-row md:items-baseline justify-between mb-16">
         <div>
-          <span className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]">
-            [03] // WHAT I BUILD WITH
-          </span>
+          <TextScramble
+            text="[03] // WHAT I BUILD WITH"
+            className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]"
+          />
           <AliveSectionHeading
             text="Craft & Toolbox"
             variant="tracking-expand"
@@ -59,9 +62,11 @@ export default function CraftToolbox() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {CRAFT_DOMAINS.map((domain) => (
-          <div
+          <SpotlightCard
             data-scroll-reveal
             key={domain.num}
+            spotlightColor="rgba(206, 255, 0, 0.08)"
+            borderColor="rgba(206, 255, 0, 0.35)"
             className={`p-8 md:p-10 rounded-2xl bg-[#141417] border border-[rgba(244,243,238,0.08)] ${domain.initialRotate} hover:rotate-0 hover:scale-[1.015] hover:-translate-y-2.5 hover:border-[rgba(244,243,238,0.25)] hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between space-y-6 shadow-lg will-change-transform cursor-default`}
           >
             <div>
@@ -79,7 +84,10 @@ export default function CraftToolbox() {
             <div className="pt-6 border-t border-[rgba(244,243,238,0.08)]">
               <div className="p-3.5 sm:p-4 rounded-xl bg-[#18181C] border border-[rgba(244,243,238,0.08)] flex flex-wrap items-center gap-x-3 gap-y-2">
                 {domain.tools.map((tool, idx) => (
-                  <span key={tool} className="inline-flex items-center space-x-3 whitespace-nowrap">
+                  <span
+                    key={tool}
+                    className="inline-flex items-center space-x-3 whitespace-nowrap px-2 py-0.5 rounded transition-all duration-200 hover:bg-[#25252A] hover:text-[#CEFF00]"
+                  >
                     <span className="font-frama-meta text-xs sm:text-[13px] tracking-wide text-[#F4F3EE] font-medium">
                       {tool}
                     </span>
@@ -90,7 +98,7 @@ export default function CraftToolbox() {
                 ))}
               </div>
             </div>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
     </section>

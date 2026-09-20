@@ -32,9 +32,9 @@ export default function EditorialHeader() {
           : 'bg-transparent py-7 px-6 md:px-12'
       }`}
     >
-      {/* Editorial Hairline Reading Progress Indicator */}
+      {/* Editorial Hairline Reading Progress Indicator with Glow */}
       <div
-        className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-[#CEFF00] via-[#CEFF00] to-white transition-all duration-75 z-50 pointer-events-none opacity-85"
+        className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-[#CEFF00] via-[#CEFF00] to-white transition-all duration-75 z-50 pointer-events-none opacity-90 shadow-[0_0_12px_#CEFF00]"
         style={{ width: `${scrollProgress}%` }}
       />
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -85,7 +85,7 @@ export default function EditorialHeader() {
           <a
             href="#contact"
             onClick={(e) => handleNav(e, 'contact')}
-            className="bg-[#CEFF00] text-[#111113] hover:bg-[#F4F3EE] px-4 py-1.5 rounded-full font-frama-meta text-xs md:text-sm tracking-wide shadow-md transition-all duration-200 cursor-pointer focus:outline-none"
+            className="bg-[#CEFF00] text-[#111113] hover:bg-[#F4F3EE] hover:shadow-[0_0_20px_rgba(206,255,0,0.5)] hover:scale-105 active:scale-95 px-4 py-1.5 rounded-full font-frama-meta text-xs md:text-sm tracking-wide shadow-md transition-all duration-200 cursor-pointer focus:outline-none"
             aria-label="Navigate to Contact Section"
           >
             [Contact]

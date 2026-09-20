@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import InteractiveContactHeading from '@/components/ui/InteractiveContactHeading';
+import TextScramble from '@/components/ui/TextScramble';
 
 export default function ContactEditorial() {
   const [copiedText, setCopiedText] = useState<string | null>(null);
@@ -21,9 +22,10 @@ export default function ContactEditorial() {
   return (
     <section id="contact" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
       <div data-scroll-reveal className="mb-12">
-        <span className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]">
-          [04] // GET IN TOUCH
-        </span>
+        <TextScramble
+          text="[04] // GET IN TOUCH"
+          className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]"
+        />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -44,7 +46,7 @@ export default function ContactEditorial() {
             href="https://t.me/stylixXD"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] transition-colors shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
@@ -54,7 +56,7 @@ export default function ContactEditorial() {
                 @stylixXD
               </p>
             </div>
-            <span className="text-sm font-frama-meta text-[#8E8E93] group-hover:text-[#CEFF00] transition-colors">
+            <span className="text-sm font-frama-meta text-[#8E8E93] group-hover:text-[#CEFF00] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200">
               ↗
             </span>
           </a>
@@ -62,11 +64,11 @@ export default function ContactEditorial() {
           {/* Discord */}
           <div
             onClick={() => copyToClipboard('Itzboyashu', 'Discord')}
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] transition-colors cursor-pointer shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
-                Discord {copiedText === 'Discord' && <span className="text-[#CEFF00] ml-2 font-tag normal-case">(Copied!)</span>}
+                Discord {copiedText === 'Discord' && <span className="text-[#CEFF00] ml-2 font-mono text-xs font-bold animate-pulse">(Copied!)</span>}
               </p>
               <p className="font-frama-meta text-base text-[#F4F3EE] mt-1">
                 Itzboyashu
@@ -80,7 +82,7 @@ export default function ContactEditorial() {
           {/* Email */}
           <a
             href="mailto:stylixXD@gmail.com"
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] transition-colors shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
@@ -90,7 +92,7 @@ export default function ContactEditorial() {
                 stylixXD@gmail.com
               </p>
             </div>
-            <span className="text-sm font-frama-meta text-[#8E8E93] group-hover:text-[#CEFF00] transition-colors">
+            <span className="text-sm font-frama-meta text-[#8E8E93] group-hover:text-[#CEFF00] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200">
               ↗
             </span>
           </a>
@@ -100,7 +102,7 @@ export default function ContactEditorial() {
             href="https://github.com/stylixXD"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] transition-colors shadow-md"
+            className="group flex items-center justify-between p-5 rounded-xl bg-[#141417] border border-[rgba(244,243,238,0.08)] hover:border-[#CEFF00] hover:shadow-[0_0_25px_rgba(206,255,0,0.15)] hover:-translate-y-1 transition-all duration-300 shadow-md"
           >
             <div>
               <p className="font-frama-meta text-xs text-[#8E8E93]">
@@ -110,7 +112,7 @@ export default function ContactEditorial() {
                 @stylixXD
               </p>
             </div>
-            <span className="text-sm font-frama-meta text-[#8E8E93] group-hover:text-[#CEFF00] transition-colors">
+            <span className="text-sm font-frama-meta text-[#8E8E93] group-hover:text-[#CEFF00] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200">
               ↗
             </span>
           </a>

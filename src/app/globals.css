@@ -194,3 +194,41 @@ html.lenis, html.lenis body {
 html:not(.lenis) {
   scroll-behavior: smooth;
 }
+
+/* animate-ui / inspira-ui Keyframe Animations */
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes float-idle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-border-beam {
+  animation: border-beam linear infinite;
+}
+
+.animate-float-idle {
+  animation: float-idle 5s ease-in-out infinite;
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 0.85s ease-out forwards;
+}
+

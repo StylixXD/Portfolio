@@ -3,6 +3,7 @@
 import React from 'react';
 import ColorPaintingQuote from '@/components/ui/ColorPaintingQuote';
 import AliveSectionHeading from '@/components/ui/AliveSectionHeading';
+import TextScramble from '@/components/ui/TextScramble';
 
 function HighlightWord({
   children,
@@ -24,9 +25,10 @@ export default function AboutNarrative() {
   return (
     <section id="about" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
       <div data-scroll-reveal className="mb-16">
-        <span className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]">
-          [02] // THE STORY
-        </span>
+        <TextScramble
+          text="[02] // THE STORY"
+          className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]"
+        />
         <AliveSectionHeading
           text="Behind the Screen"
           variant="stagger-chars"
