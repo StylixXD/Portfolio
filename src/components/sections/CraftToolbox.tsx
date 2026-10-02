@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
-import AliveSectionHeading from '@/components/ui/AliveSectionHeading';
-import SpotlightCard from '@/components/ui/SpotlightCard';
+import React, { useState } from 'react';
 import TextScramble from '@/components/ui/TextScramble';
+import AliveSectionHeading from '@/components/ui/AliveSectionHeading';
+import OptionWheel from '@/components/reactbits/OptionWheel/OptionWheel';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CRAFT_DOMAINS = [
   {
@@ -41,64 +42,129 @@ const CRAFT_DOMAINS = [
 ];
 
 export default function CraftToolbox() {
+  const [selectedIdx, setSelectedIdx] = useState(0);
+  const selectedDomain = CRAFT_DOMAINS[selectedIdx] || CRAFT_DOMAINS[0];
+
   return (
-    <section id="craft" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(244,243,238,0.1)]">
+    <section id="craft" className="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[rgba(56,189,248,0.12)]">
       <div data-scroll-reveal className="flex flex-col md:flex-row md:items-baseline justify-between mb-16">
         <div>
           <TextScramble
             text="[03] // WHAT I BUILD WITH"
-            className="font-frama-meta text-xs md:text-sm tracking-wider text-[#CEFF00]"
+            className="font-frama-meta text-xs md:text-sm tracking-wider text-[#38BDF8]"
           />
           <AliveSectionHeading
             text="Craft & Toolbox"
             variant="tracking-expand"
-            className="text-4xl sm:text-6xl text-[#F4F3EE] mt-2"
+            className="text-4xl sm:text-6xl text-[#F4F6F7] mt-2"
           />
         </div>
-        <p className="font-sans-body text-sm text-[#8E8E93] max-w-xs mt-4 md:mt-0">
+        <p className="font-sans-body text-sm text-[#8FA4B2] max-w-xs mt-4 md:mt-0">
           The tools I actually use to turn ideas into working software.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      {/* Desktop view */}
+      <div data-scroll-reveal className="hidden md:grid md:grid-cols-12 gap-8 lg:gap-14 items-center">
+        {/* Domain selector */}
+        <div className="md:col-span-5 lg:col-span-6 h-[460px] relative overflow-hidden flex items-center [mask-image:linear-gradient(to_bottom,transparent_0%,black_16%,black_84%,transparent_100%)]">
+          <div className="w-full h-full relative">
+            <OptionWheel
+              items={CRAFT_DOMAINS.map((d) => d.title)}
+              defaultSelected={0}
+              onChange={(idx) => setSelectedIdx(idx)}
+              side="left"
+              fontSize={2.4}
+              inset={28}
+              loop={false}
+              draggable={true}
+              soundUrl=""
+              textColor="#8FA4B2"
+              activeColor="#38BDF8"
+              className="w-full h-full font-frama-black-italic tracking-tight"
+            />
+          </div>
+        </div>
+
+        {/* Domain details */}
+        <div className="md:col-span-7 lg:col-span-6 flex flex-col justify-center min-h-[460px] py-4 pl-2 lg:pl-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedDomain.num}
+              initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -14, filter: 'blur(4px)' }}
+              transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-6"
+            >
+              <div className="flex items-center gap-3">
+                <span className="font-frama-meta text-xs md:text-sm text-[#38BDF8] tracking-widest uppercase font-semibold">
+                  [{selectedDomain.num}] // CATEGORY
+                </span>
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-[rgba(56,189,248,0.3)] to-transparent" />
+              </div>
+
+              <h3 className="font-frama-black-italic text-3xl sm:text-4xl lg:text-5xl text-[#F4F6F7] uppercase tracking-tight leading-tight">
+                {selectedDomain.title}
+              </h3>
+
+              <p className="font-sans-body text-base sm:text-lg text-[#8FA4B2] leading-relaxed max-w-xl">
+                {selectedDomain.summary}
+              </p>
+
+              <div className="pt-4 border-t border-[rgba(56,189,248,0.12)] space-y-3">
+                <span className="block font-frama-meta text-xs text-[#8FA4B2] tracking-wider uppercase">
+                  Verified Tools &amp; Technologies
+                </span>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  {selectedDomain.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-[#14232B] border border-[rgba(56,189,248,0.18)] font-frama-meta text-xs sm:text-[13px] tracking-wide text-[#F4F6F7] font-medium hover:border-[#38BDF8] hover:text-[#38BDF8] hover:scale-105 transition-all duration-200 select-none shadow-sm"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* Mobile layout */}
+      <div className="grid grid-cols-1 gap-8 md:hidden">
         {CRAFT_DOMAINS.map((domain) => (
-          <SpotlightCard
+          <div
             data-scroll-reveal
             key={domain.num}
-            spotlightColor="rgba(206, 255, 0, 0.08)"
-            borderColor="rgba(206, 255, 0, 0.35)"
-            className={`p-8 md:p-10 rounded-2xl bg-[#141417] border border-[rgba(244,243,238,0.08)] ${domain.initialRotate} hover:rotate-0 hover:scale-[1.015] hover:-translate-y-2.5 hover:border-[rgba(244,243,238,0.25)] hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between space-y-6 shadow-lg will-change-transform cursor-default`}
+            className="p-8 rounded-2xl bg-[#111E24] border border-[rgba(56,189,248,0.12)] flex flex-col justify-between space-y-6 shadow-lg cursor-default"
           >
             <div>
-              <span className="font-frama-meta text-sm text-[#CEFF00]">
+              <span className="font-frama-meta text-sm text-[#38BDF8]">
                 [{domain.num}]
               </span>
-              <h3 className="font-frama-black-italic text-2xl sm:text-3xl text-[#F4F3EE] uppercase tracking-tight mt-2">
+              <h3 className="font-frama-black-italic text-2xl text-[#F4F6F7] uppercase tracking-tight mt-2">
                 {domain.title}
               </h3>
-              <p className="font-sans-body text-sm sm:text-base text-[#8E8E93] leading-relaxed mt-3">
+              <p className="font-sans-body text-sm text-[#8FA4B2] leading-relaxed mt-3">
                 {domain.summary}
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[rgba(244,243,238,0.08)]">
-              <div className="p-3.5 sm:p-4 rounded-xl bg-[#18181C] border border-[rgba(244,243,238,0.08)] flex flex-wrap items-center gap-x-3 gap-y-2">
-                {domain.tools.map((tool, idx) => (
+            <div className="pt-6 border-t border-[rgba(56,189,248,0.1)]">
+              <div className="p-3.5 rounded-xl bg-[#14232B] border border-[rgba(56,189,248,0.12)] flex flex-wrap items-center gap-2">
+                {domain.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="inline-flex items-center space-x-3 whitespace-nowrap px-2 py-0.5 rounded transition-all duration-200 hover:bg-[#25252A] hover:text-[#CEFF00]"
+                    className="inline-flex items-center px-3 py-1 rounded-md bg-[#162630] border border-[rgba(56,189,248,0.12)] font-frama-meta text-xs tracking-wide text-[#F4F6F7] font-medium"
                   >
-                    <span className="font-frama-meta text-xs sm:text-[13px] tracking-wide text-[#F4F3EE] font-medium">
-                      {tool}
-                    </span>
-                    {idx < domain.tools.length - 1 && (
-                      <span className="text-[#CEFF00] text-xs font-bold select-none opacity-80" aria-hidden="true">·</span>
-                    )}
+                    {tool}
                   </span>
                 ))}
               </div>
             </div>
-          </SpotlightCard>
+          </div>
         ))}
       </div>
     </section>

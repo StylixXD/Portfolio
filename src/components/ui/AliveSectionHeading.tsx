@@ -43,7 +43,7 @@ export default function AliveSectionHeading({
         if (dist < 80) {
           const factor = 1 - dist / 80;
           char.style.transform = `translateY(${-factor * 6}px) scale(${1 + factor * 0.08})`;
-          char.style.color = '#CEFF00';
+          char.style.color = '#38BDF8';
           char.style.transition = 'transform 0.08s ease-out, color 0.1s ease-out';
         } else if (char.style.transform && char.style.transform !== '') {
           char.style.transform = '';

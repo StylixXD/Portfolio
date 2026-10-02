@@ -35,15 +35,15 @@ export default function ColorPaintingQuote({ quote }: ColorPaintingQuoteProps) {
 
           if (dist < radius) {
             const factor = 1 - dist / radius;
-            // Transition between ivory (#F4F3EE) and electric lime (#CEFF00)
+            // Transition between ivory (#F4F6F7) and electric cyan (#38BDF8)
             if (factor > 0.6) {
-              char.style.color = '#CEFF00';
+              char.style.color = '#38BDF8';
               char.style.transform = 'translateY(-2px)';
             } else if (factor > 0.25) {
-              char.style.color = '#DFFF4F';
+              char.style.color = '#7DD3FC';
               char.style.transform = 'translateY(-1px)';
             } else {
-              char.style.color = '#EAFFAA';
+              char.style.color = '#BAE6FD';
               char.style.transform = 'translateY(0px)';
             }
             char.style.transition = 'color 0.08s ease-out, transform 0.08s ease-out';
@@ -69,7 +69,7 @@ export default function ColorPaintingQuote({ quote }: ColorPaintingQuoteProps) {
     const handleTouch = () => {
       chars.forEach((char, i) => {
         setTimeout(() => {
-          char.style.color = '#CEFF00';
+          char.style.color = '#38BDF8';
           char.style.transform = 'translateY(-2px)';
           setTimeout(() => {
             char.style.color = '';
@@ -94,7 +94,7 @@ export default function ColorPaintingQuote({ quote }: ColorPaintingQuoteProps) {
   return (
     <blockquote
       ref={quoteRef}
-      className="font-frama-black-italic text-2xl sm:text-3xl lg:text-4xl text-[#F4F3EE] uppercase leading-[1.05] tracking-tight select-none cursor-default py-2"
+      className="font-frama-black-italic text-2xl sm:text-3xl lg:text-4xl text-[#F4F6F7] uppercase leading-[1.05] tracking-tight select-none cursor-default py-2"
     >
       &ldquo;
       {quote.split(' ').map((word, wordIdx) => (

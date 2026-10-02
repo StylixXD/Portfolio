@@ -16,6 +16,25 @@ export default function InteractiveHeroHeading({ lines }: InteractiveHeroHeading
 
     const chars = container.querySelectorAll<HTMLSpanElement>('.interactive-char');
 
+    let charCenters: { char: HTMLSpanElement; x: number; y: number }[] = [];
+
+    const updateCharCenters = () => {
+      charCenters = Array.from(chars).map((char) => {
+        const rect = char.getBoundingClientRect();
+        return {
+          char,
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        };
+      });
+    };
+
+    updateCharCenters();
+
+    const handlePointerEnter = () => {
+      updateCharCenters();
+    };
+
     const handlePointerMove = (e: PointerEvent) => {
       if (rafId.current) cancelAnimationFrame(rafId.current);
 
@@ -24,13 +43,11 @@ export default function InteractiveHeroHeading({ lines }: InteractiveHeroHeading
         const mouseY = e.clientY;
         const radius = 130; // Radius of influence in pixels
 
-        chars.forEach((char) => {
-          const rect = char.getBoundingClientRect();
-          const charX = rect.left + rect.width / 2;
-          const charY = rect.top + rect.height / 2;
-
-          const dx = charX - mouseX;
-          const dy = charY - mouseY;
+        for (let i = 0; i < charCenters.length; i++) {
+          const item = charCenters[i];
+          const char = item.char;
+          const dx = item.x - mouseX;
+          const dy = item.y - mouseY;
           const dist = Math.hypot(dx, dy);
 
           if (dist < radius) {
@@ -47,7 +64,7 @@ export default function InteractiveHeroHeading({ lines }: InteractiveHeroHeading
             char.style.transform = 'translate3d(0px, 0px, 0px)';
             char.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
           }
-        });
+        }
       });
     };
 
@@ -73,15 +90,19 @@ export default function InteractiveHeroHeading({ lines }: InteractiveHeroHeading
       });
     };
 
+    container.addEventListener('pointerenter', handlePointerEnter, { passive: true });
     container.addEventListener('pointermove', handlePointerMove, { passive: true });
     container.addEventListener('pointerleave', handlePointerLeave, { passive: true });
     container.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('resize', updateCharCenters, { passive: true });
 
     return () => {
       if (rafId.current) cancelAnimationFrame(rafId.current);
+      container.removeEventListener('pointerenter', handlePointerEnter);
       container.removeEventListener('pointermove', handlePointerMove);
       container.removeEventListener('pointerleave', handlePointerLeave);
       container.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('resize', updateCharCenters);
     };
   }, []);
 
@@ -94,7 +115,7 @@ export default function InteractiveHeroHeading({ lines }: InteractiveHeroHeading
         <span
           key={lineIdx}
           className={`block ${lineIdx > 0 ? 'mt-2 md:mt-4' : ''} ${
-            line.colorClass || 'text-[#F4F3EE]'
+            line.colorClass || 'text-[#F4F6F7]'
           }`}
         >
           {line.text.split(' ').map((word, wordIdx) => (

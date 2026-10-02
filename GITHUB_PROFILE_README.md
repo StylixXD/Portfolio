@@ -1,16 +1,18 @@
-# Stylix — Developer & Tool Maker Portfolio
-
 <div align="center">
 
-[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-stylixdev.vercel.app-38BDF8?style=for-the-badge&logo=vercel&logoColor=black)](https://stylixdev.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-StylixXD-111E24?style=for-the-badge&logo=github&logoColor=38BDF8)](https://github.com/StylixXD)
-[![Telegram](https://img.shields.io/badge/Telegram-@stylixXD-24A1DE?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/stylixXD)
-[![Discord](https://img.shields.io/badge/Discord-Itzboyashu-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com)
+<img src="https://raw.githubusercontent.com/StylixXD/Portfolio/main/public/images/processed/avatar-v2.png" alt="Ashu (@stylixXD)" width="130" height="130" style="border-radius: 50%; border: 3px solid #38BDF8;" />
+
+# Hey, I'm Ashu 👋
+### `@stylixXD` · Student Developer · Tool Builder · Automation Engineer
 
 <p align="center">
-  <strong>Personal portfolio for Ashu (@stylixXD) — Student Developer, Tool Builder, and Automation Engineer.</strong><br />
-  <em>Building bots, automation scripts, desktop utilities, systems, and tools that eliminate repetitive manual workflows.</em>
+  <em>"I don't build just for the viewport. I build machines to work for me."</em>
 </p>
+
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-stylixdev.vercel.app-38BDF8?style=for-the-badge&logo=vercel&logoColor=black)](https://stylixdev.vercel.app)
+[![Telegram](https://img.shields.io/badge/Telegram-@stylixXD-24A1DE?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/stylixXD)
+[![Discord](https://img.shields.io/badge/Discord-Itzboyashu-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com)
+[![Email](https://img.shields.io/badge/Email-stylixXD@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:stylixXD@gmail.com)
 
 </div>
 
@@ -58,48 +60,10 @@
 
 ---
 
-### 🚀 Verified Repositories & Builds
+### ⚡ Selected Repositories:
 
-| # | Project | Stack | Repository | Description |
-|---|---|---|---|---|
-| **01** | **Telegram Concurrency Engine** | `Python` `Telethon` `Asyncio` | [StylixXD/tg-bot](https://github.com/StylixXD/tg-bot) | Non-blocking multi-session MTProto automation & rate-limit mitigation engine. |
-| **02** | **Discord Security Bot** | `Python` `Discord.py` `APIs` | [StylixXD/moderation-bot](https://github.com/StylixXD/moderation-bot) | Real-time raid suppression, audit log monitoring, and automated server guard. |
-| **03** | **Xbox / Microsoft Auth Tool** | `Python` `OAuth` `REST APIs` | [StylixXD/vadilator-ms](https://github.com/StylixXD/vadilator-ms) | Microsoft Live OAuth validation, token exchange, and challenge resolution. |
-| **04** | **StorageIQ** | `Kotlin` `Android SAF` | [StylixXD/Storageiq](https://github.com/StylixXD/Storageiq) | Native Android storage analyzer built on SAF for deep file audits. |
-| **05** | **Automation & Scraping Ecosystem** | `Python` `Scraping` `APIs` | [StylixXD/auto-scrap](https://github.com/StylixXD/auto-scrap) | High-speed data extraction and pipeline automation tooling. |
-
----
-
-### 🛠️ Architecture & Performance
-
-- **Framework:** Next.js (App Router, Turbopack)
-- **UI & State:** React, TypeScript (strict mode)
-- **Styling:** Custom dark aesthetic with Tailwind CSS
-- **Smooth Navigation:** Lenis smooth scrolling with hardware-accelerated RAF sync
-- **Performance:** Dual-pass canvas physics, lazy IntersectionObservers, zero layout thrashing on interactive typography
-
----
-
-### 💻 Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/StylixXD/Portfolio.git
-cd Portfolio
-
-# Install dependencies
-npm install
-
-# Start local development server
-npm run dev
-
-# Production build & preview
-npm run build
-npm run start
-```
-
----
-
-<p align="center">
-  <sub>© 2026 Ashu (Stylix). Built with precision.</sub>
-</p>
+- 🤖 **[tg-bot](https://github.com/StylixXD/tg-bot)** — Multi-session Telegram concurrency & task automation engine.
+- 🛡️ **[moderation-bot](https://github.com/StylixXD/moderation-bot)** — Real-time Discord anti-raid and gateway moderation controller.
+- 🔑 **[vadilator-ms](https://github.com/StylixXD/vadilator-ms)** — Multi-threaded Microsoft / Xbox Live authentication validator.
+- 📱 **[Storageiq](https://github.com/StylixXD/Storageiq)** — Native Android storage analyzer built on SAF for deep file audits.
+- 🌐 **[Portfolio](https://github.com/StylixXD/Portfolio)** — Next.js production portfolio deployed at [stylixdev.vercel.app](https://stylixdev.vercel.app).

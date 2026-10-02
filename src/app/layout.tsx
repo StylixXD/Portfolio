@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Stylix (Ashu) — Developer & Tool Maker',
+  title: 'Stylix Portfolio',
   description:
     'Creative developer building automation, low-level software, and tools that make repetitive work disappear.',
   keywords: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#111113',
+  themeColor: '#0B1317',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -53,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark bg-[#111113] text-[#F4F3EE]">
-      <body className="antialiased bg-[#111113] text-[#F4F3EE] overflow-x-hidden selection:bg-[#CEFF00] selection:text-[#111113]">
+    <html lang="en" className="dark bg-[#0B1317] text-[#F4F6F7]">
+      <body className="antialiased bg-[#0B1317] text-[#F4F6F7] overflow-x-hidden selection:bg-[#38BDF8] selection:text-[#0B1317]">
         {children}
       </body>
     </html>

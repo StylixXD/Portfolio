@@ -34,16 +34,18 @@
 }
 
 :root {
-  --bg-canvas: #111113;
-  --bg-surface: #18181b;
-  --bg-surface-elevated: #222227;
-  --text-ink: #f4f3ee;
-  --text-muted: #8e8e93;
-  --text-dim: #5c5c62;
-  --accent-lime: #ceff00;
-  --accent-pink: #ff3eba;
-  --border-subtle: rgba(244, 243, 238, 0.08);
-  --border-medium: rgba(244, 243, 238, 0.16);
+  --bg-canvas: #0B1317;
+  --bg-surface: #111E24;
+  --bg-surface-elevated: #162630;
+  --text-ink: #F4F6F7;
+  --text-muted: #8FA4B2;
+  --text-dim: #5B707E;
+  --accent-cyan: #38BDF8;
+  --accent-teal: #2DD4BF;
+  --accent-blush: #F29E8E;
+  --accent-lime: #38BDF8;
+  --border-subtle: rgba(56, 189, 248, 0.12);
+  --border-medium: rgba(56, 189, 248, 0.24);
 }
 
 * {
@@ -219,5 +221,35 @@ html:not(.lenis) {
 
 .animate-shimmer-sweep {
   animation: shimmer-sweep 0.85s ease-out forwards;
+}
+
+@keyframes scanline-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-scanline-sweep {
+  animation: scanline-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 

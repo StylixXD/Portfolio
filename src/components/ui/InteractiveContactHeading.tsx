@@ -16,6 +16,25 @@ export default function InteractiveContactHeading({ lines }: InteractiveContactH
 
     const chars = container.querySelectorAll<HTMLSpanElement>('.contact-interactive-char');
 
+    let charCenters: { char: HTMLSpanElement; x: number; y: number }[] = [];
+
+    const updateCharCenters = () => {
+      charCenters = Array.from(chars).map((char) => {
+        const rect = char.getBoundingClientRect();
+        return {
+          char,
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        };
+      });
+    };
+
+    updateCharCenters();
+
+    const handlePointerEnter = () => {
+      updateCharCenters();
+    };
+
     const handlePointerMove = (e: PointerEvent) => {
       if (rafId.current) cancelAnimationFrame(rafId.current);
 
@@ -24,13 +43,11 @@ export default function InteractiveContactHeading({ lines }: InteractiveContactH
         const mouseY = e.clientY;
         const radius = 110; // Softer influence zone
 
-        chars.forEach((char) => {
-          const rect = char.getBoundingClientRect();
-          const charX = rect.left + rect.width / 2;
-          const charY = rect.top + rect.height / 2;
-
-          const dx = charX - mouseX;
-          const dy = charY - mouseY;
+        for (let i = 0; i < charCenters.length; i++) {
+          const item = charCenters[i];
+          const char = item.char;
+          const dx = item.x - mouseX;
+          const dy = item.y - mouseY;
           const dist = Math.hypot(dx, dy);
 
           if (dist < radius) {
@@ -42,14 +59,14 @@ export default function InteractiveContactHeading({ lines }: InteractiveContactH
             const skew = (dx / radius) * factor * -4;
 
             char.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0) scale(${scale.toFixed(2)}) skewX(${skew.toFixed(1)}deg)`;
-            char.style.color = factor > 0.4 ? '#CEFF00' : '#F4F3EE';
+            char.style.color = factor > 0.4 ? '#38BDF8' : '#F4F6F7';
             char.style.transition = 'transform 0.08s ease-out, color 0.12s ease-out';
           } else if (char.style.transform && char.style.transform !== 'translate3d(0px, 0px, 0px)') {
             char.style.transform = 'translate3d(0px, 0px, 0px) scale(1) skewX(0deg)';
             char.style.color = '';
             char.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease-out';
           }
-        });
+        }
       });
     };
 
@@ -62,20 +79,24 @@ export default function InteractiveContactHeading({ lines }: InteractiveContactH
       });
     };
 
+    container.addEventListener('pointerenter', handlePointerEnter, { passive: true });
     container.addEventListener('pointermove', handlePointerMove, { passive: true });
     container.addEventListener('pointerleave', handlePointerLeave, { passive: true });
+    window.addEventListener('resize', updateCharCenters, { passive: true });
 
     return () => {
       if (rafId.current) cancelAnimationFrame(rafId.current);
+      container.removeEventListener('pointerenter', handlePointerEnter);
       container.removeEventListener('pointermove', handlePointerMove);
       container.removeEventListener('pointerleave', handlePointerLeave);
+      window.removeEventListener('resize', updateCharCenters);
     };
   }, []);
 
   return (
     <h2
       ref={containerRef}
-      className="font-frama-black-italic text-5xl sm:text-7xl lg:text-8xl uppercase leading-[0.9] tracking-tight select-none cursor-default"
+      className="font-frama-black-italic text-5xl sm:text-7xl lg:text-8xl uppercase leading-[0.88] tracking-tight select-none cursor-default"
     >
       {lines.map((line, lineIdx) => (
         <span

@@ -9,6 +9,9 @@ import WorkExhibition from '@/components/sections/WorkExhibition';
 import AboutNarrative from '@/components/sections/AboutNarrative';
 import CraftToolbox from '@/components/sections/CraftToolbox';
 import ContactEditorial from '@/components/sections/ContactEditorial';
+import NoiseOverlay from '@/components/ui/NoiseOverlay';
+import BranchedNavRail from '@/components/navigation/BranchedNavRail';
+import { CursorProvider, Cursor } from '@/components/animate-ui/components/animate/cursor';
 
 export default function Home() {
   useEffect(() => {
@@ -21,13 +24,18 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-[#111113] text-[#F4F3EE] selection:bg-[#CEFF00] selection:text-[#111113]">
-      <EditorialHeader />
-      <Hero />
-      <WorkExhibition />
-      <AboutNarrative />
-      <CraftToolbox />
-      <ContactEditorial />
-    </main>
+    <CursorProvider global={true}>
+      <Cursor />
+      <main className="relative min-h-screen bg-[#0B1317] text-[#F4F6F7] selection:bg-[#38BDF8] selection:text-[#0B1317]">
+        <NoiseOverlay />
+        <BranchedNavRail />
+        <EditorialHeader />
+        <Hero />
+        <WorkExhibition />
+        <AboutNarrative />
+        <CraftToolbox />
+        <ContactEditorial />
+      </main>
+    </CursorProvider>
   );
 }
