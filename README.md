@@ -1,86 +1,57 @@
 # Stylix — Developer & Tool Maker Portfolio
 
-<div align="center">
+Personal portfolio for **Ashu (@stylixXD)** — Student Developer, Tool Builder, and Automation Engineer.
 
-[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-stylixdev.vercel.app-38BDF8?style=for-the-badge&logo=vercel&logoColor=black)](https://stylixdev.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-StylixXD-111E24?style=for-the-badge&logo=github&logoColor=38BDF8)](https://github.com/StylixXD)
-[![Telegram](https://img.shields.io/badge/Telegram-@stylixXD-24A1DE?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/stylixXD)
-[![Discord](https://img.shields.io/badge/Discord-Itzboyashu-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com)
-
-<p align="center">
-  <strong>Personal portfolio for Ashu (@stylixXD) — Student Developer, Tool Builder, and Automation Engineer.</strong><br />
-  <em>Building bots, automation scripts, desktop utilities, systems, and tools that eliminate repetitive manual workflows.</em>
-</p>
-
-</div>
+- **Live Production URL:** [https://stylixdev.vercel.app](https://stylixdev.vercel.app)
+- **GitHub Profile:** [https://github.com/StylixXD](https://github.com/StylixXD)
+- **Repository:** [https://github.com/StylixXD/Portfolio](https://github.com/StylixXD/Portfolio)
 
 ---
 
-### 🌐 Socials:
+## Technical Architecture
 
-[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/stylixXD)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/StylixXD)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:stylixXD@gmail.com)
-
----
-
-### 💻 Tech Stack:
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Windows](https://img.shields.io/badge/Windows_API-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+- **Framework:** Next.js (App Router, Turbopack enabled)
+- **UI & Runtime:** React 19, TypeScript (strict mode)
+- **Styling:** Tailwind CSS v4 with custom dark editorial palette
+- **Typography:** PP Frama (Black Italic display, Meta technical accents) & Plus Jakarta Sans body
+- **Motion & Physics:** Lenis smooth scrolling, dual-pass canvas particle systems, interactive character physics, RAF-synchronized scroll reveals
 
 ---
 
-### 📊 GitHub Stats:
+## Featured Projects
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=StylixXD&show_icons=true&theme=dark&hide_border=false&border_color=38bdf8&bg_color=0b1317&title_color=38bdf8&icon_color=38bdf8&text_color=8fa4b2" alt="StylixXD's GitHub Stats" />
-  &nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=StylixXD&layout=compact&theme=dark&hide_border=false&border_color=38bdf8&bg_color=0b1317&title_color=38bdf8&text_color=8fa4b2" alt="Top Languages" />
-</div>
+All project cards link directly to verified source repositories:
 
----
+1. **[Telegram Concurrency Engine](https://github.com/StylixXD/tg-bot)**  
+   *Category: Bot Architecture & Concurrency*  
+   Distributed bot worker cluster designed for massive group routing, multi-session MTProto connection pooling, and automated token rotation under aggressive rate limits.
 
-### 🚀 Verified Repositories & Builds
+2. **[Discord Security Bot](https://github.com/StylixXD/moderation-bot)**  
+   *Category: Security & Infrastructure*  
+   Security bot and session controller engineered for proactive community moderation, WebSocket audit logging, and automated raid mitigation.
 
-| # | Project | Stack | Repository | Description |
-|---|---|---|---|---|
-| **01** | **Telegram Concurrency Engine** | `Python` `Telethon` `Asyncio` | [StylixXD/tg-bot](https://github.com/StylixXD/tg-bot) | Non-blocking multi-session MTProto automation & rate-limit mitigation engine. |
-| **02** | **Discord Security Bot** | `Python` `Discord.py` `APIs` | [StylixXD/moderation-bot](https://github.com/StylixXD/moderation-bot) | Real-time raid suppression, audit log monitoring, and automated server guard. |
-| **03** | **Xbox / Microsoft Auth Tool** | `Python` `OAuth` `REST APIs` | [StylixXD/vadilator-ms](https://github.com/StylixXD/vadilator-ms) | Microsoft Live OAuth validation, token exchange, and challenge resolution. |
-| **04** | **StorageIQ** | `Kotlin` `Android SAF` | [StylixXD/Storageiq](https://github.com/StylixXD/Storageiq) | Native Android storage analyzer built on SAF for deep file audits. |
-| **05** | **Automation & Scraping Ecosystem** | `Python` `Scraping` `APIs` | [StylixXD/auto-scrap](https://github.com/StylixXD/auto-scrap) | High-speed data extraction and pipeline automation tooling. |
+3. **[Xbox / Microsoft Account Engine](https://github.com/StylixXD/vadilator-ms)**  
+   *Category: Systems & Protocol Engineering*  
+   Multi-threaded authentication validator implementing raw Microsoft Live / Xbox Live OAuth flows, session challenge handling, and proxy mesh distribution.
 
----
+4. **[StorageIQ](https://github.com/StylixXD/Storageiq)**  
+   *Category: Native Mobile Engineering*  
+   Android storage utility built on the Storage Access Framework (SAF) for deep file analysis, duplicate cleanup, and offline asset categorization.
 
-### 🛠️ Architecture & Performance
-
-- **Framework:** Next.js (App Router, Turbopack)
-- **UI & State:** React, TypeScript (strict mode)
-- **Styling:** Custom dark aesthetic with Tailwind CSS
-- **Smooth Navigation:** Lenis smooth scrolling with hardware-accelerated RAF sync
-- **Performance:** Dual-pass canvas physics, lazy IntersectionObservers, zero layout thrashing on interactive typography
+5. **[Automation Tooling & Scrapers](https://github.com/StylixXD/auto-scrap)**  
+   *Category: Automation & Systems*  
+   Headless automation pipelines and data extraction engines resilient to aggressive anti-bot fingerprints and dynamic DOM shifts.
 
 ---
 
-### 💻 Local Development
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20.x or higher
+- npm 10.x or higher
+
+### Installation
 
 ```bash
 # Clone the repository
@@ -89,17 +60,38 @@ cd Portfolio
 
 # Install dependencies
 npm install
+```
 
-# Start local development server
+### Local Development
+
+```bash
+# Start development server on localhost:3000
 npm run dev
+```
 
-# Production build & preview
+### Production Build
+
+```bash
+# Compile and optimize for production
 npm run build
+
+# Preview production build locally
 npm run start
 ```
 
 ---
 
-<p align="center">
-  <sub>© 2026 Ashu (Stylix). Built with precision.</sub>
-</p>
+## Deployment (Vercel)
+
+This repository includes a production-ready `vercel.json` and `.npmrc` configuration for zero-config deployments.
+
+1. Push this repository to GitHub at `StylixXD/Portfolio`.
+2. In the [Vercel Dashboard](https://vercel.com/new), import `StylixXD/Portfolio`.
+3. Set the project name to `stylixdev` to deploy to `https://stylixdev.vercel.app`.
+4. Deploy.
+
+---
+
+## License
+
+© 2026 Ashu (Stylix). All rights reserved.
